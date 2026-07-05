@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./carts.png" type="image/x-icon">
+     <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+
+     <style>
+          body {
+      font-family: Arial, sans-serif;
+      background:linear-gradient(to right,lavender,lightpink);
+    }
+
+    h1{
+      color:darkblue;
+      text-shadow: 2px 2px 5px white;
+    }
+
+    #searchBar {
+      margin-bottom: 20px;
+      padding: 8px 12px;
+      width: 280px;
+      font-size: 16px;
+     
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      width: 220px;
+      background: white;
+      text-align: center;
+    }
+
+    .product img {
+       width: 200px;
+       height: 180px;
+       border-radius: 10px;
+    }
+
+    button{
+      margin-top: 10px;
+      padding: 8px 15px;
+      cursor: pointer;
+      background:linear-gradient(to right,purple,deeppink);
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .product button
+    {
+      background:blue;
+      font-weight: bold;
+      color: white;
+    }
+    </style>
+
+</head>
+<body>
+    <h1><center>Amazon Lite</center></h1>
+
+    <i class="fa-solid fa-magnifying-glass-minus"></i>
+    <input type="text" name="" id="searchBar" placeholder="search here....">
+
+     <button onclick="lowToHigh()">Low To High</button>
+      <button onclick="highToLow()">High To Low</button>
+
+    <div class="product-container" id="productContainer"></div>
+    <script>
+            let container=document.getElementById("productContainer");
+            let search=document.getElementById("searchBar");
+            let products=[
+        {
+            pname:"Watch",
+            cname:"Titan",
+            price:4000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSJQ3aFajcmLVuZj2ru76hgMktb7VAQc4BeW3m0kI4Mg&s=10"
+        },
+        {
+            pname:"Mobile",
+            cname:"Redmi",
+            price:80000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCKD-Gehf2IChgEZdVynvGzErJ2i-80rhoAK0X8Xp14A&s"
+        },
+        {
+            pname:"Laptop",
+            cname:"Acer",
+            price:63000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAu4wUD-gyCW6F_l5Dn2ZGgNf2tPk8gPCENobklHfWxQ&s=10"
+        },
+        {
+            pname:"Headphone",
+            cname:"Beribes",
+            price:5000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjEJz7CL9spaRcJCngo62pkcrh6GrW2pQEduQKWe2Hkg&s=10"
+        },
+        {
+            pname:"watch",
+            cname:"Titan",
+            price:6000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeTT6X-0zD6ABT4dRmAw1cxjB68xWis5B0pZuZFv8qrA&s=10"
+        },
+        {
+            pname:"Mobile",
+            cname:"Iphone",
+            price:100000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmKm4kVn_okhjMtO5CF7FeVWx-Td4X7HrVTkoXuydEgg&s=10"
+        },
+        {
+            pname:"Headphone",
+            cname:"Beribes",
+            price:1000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMoFg5zlMLxb2hd7bmGLdsGNJkORA6PMGcxwLHNZtJdA&s=10"
+        },
+        {
+            pname:"Laptop",
+            cname:"HP",
+            price:84000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoH2kUXgM9wqRRKTf6RUZP-ix_d4QBmVRiX-xZYPwfnw&s=10"
+        },
+        {
+            pname:"Mobile",
+            cname:"Tecno",
+            price:62000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvj-tm7-H2HnIIw2xyznaX2OWy1Cw5X23yrh6bcW7FLw&s=10"
+        },
+        {
+            pname:"Headphone",
+            cname:"Beribes",
+            price:1500,  
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRciI6YDNa1BWn2upvY-k-s5ttaez6DLd4h0oOdgcf6ew&s=10"
+        }
+        
+        ];
+     function display(list)
+     {
+        container.innerHTML="";
+          // let div=document.createElement("div")
+
+        list.forEach((product)=>{
+            let div=document.createElement("div");
+            // list.forEach((product)=>{
+            div.classList.add("product");
+
+            div.innerHTML=`<img src="${product.img}">
+                           <h3>${product.pname}</h3>
+                           <p>${product.cname}</p>
+                           <p><strong>$${product.price}</strong></p>
+                           <button onclick="">Buy Now</button>`;
+
+             container.appendChild(div)              
+        });
+     }
+
+      function lowToHigh()
+{
+    // alert("button working");
+    let sorted=[...products];
+
+    sorted.sort((a,b)=>a.price-b.price);
+
+    display(sorted);
+}
+
+function highToLow()
+{
+    let sorted=[...products];
+
+    sorted.sort((a,b)=>b.price-a.price);
+
+    display(sorted);
+}
+        display(products);
+     search.addEventListener("input",()=>{
+        let searchval=search.value.toLowerCase();
+        let filtered=products.filter((pr)=>{
+            return pr.pname.toLowerCase().includes(searchval);
+        });
+        display(filtered)
+        // display(products)
+     });
+     
+        
+    </script>
+    
+</body>
+</html>

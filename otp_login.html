@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Login</title>
+     <link rel="shortcut icon" href="./profile.png" type="image/x-icon">
+      <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+      <style>
+
+        body
+        {  
+            
+            display: flex;
+            background: linear-gradient(to right,plum,lightpink);
+         
+        }
+
+          #box
+       {
+        width: 350px;
+        margin: 120px auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px gray;
+        text-align: center;
+       }
+    
+       img
+       {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+       }
+
+        input
+        {
+            width: 250px;
+            padding: 10px;
+            border: 2px solid navy;
+            border-radius: 5px;
+        }
+
+        button
+        {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+       
+        #msg
+        {
+          
+            font-size: 20px;
+            color: red;
+           
+        }
+
+        i{
+            margin-right: 5px;
+            font-size: 18px;
+        }
+
+        
+
+      </style>
+</head>
+<body>
+    <div id="box">
+    <img src="./profile.png">
+    <br><br>
+
+       <i class="fa-solid fa-user"></i>
+    <input type="text" name="" id="user" placeholder="Enter the username">
+
+    <br><br>
+
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" name="" id="pass" placeholder="Enter the password">
+
+    <br><br>
+   
+    <button onclick="getclick()">LOGIN</button>
+    <h1 id="msg"></h1>
+    </div>
+     <script>
+            let user=document.getElementById("user");
+            let pass=document.getElementById("pass");
+            let username="admin";
+            let password="admin@123";
+            let msg=document.getElementById("msg");
+            let timer;
+            let time=30;
+            let otpExpired=false;
+
+
+        function getclick(){
+
+            if (username==user.value && password==pass.value)
+        {
+            alert("LOGIN SUCCESSFULLY");
+        }
+        else{
+            msg.innerHTML=`<input type="text" id="mail" placeholder="Enter the Email">
+            <br><br>
+            <button onclick="getOtp()">Get OTP</button>`;
+        }
+            
+        }
+        function getOtp()
+        {
+            alert("OTP"+(Math.ceil(Math.random()*10000)));
+            time=30;
+            otpExpired=false;
+            msg.innerHTML=`<input type="text" id="no" placeholder="Enter the OTP">
+            <br><br>
+
+            <p id="timer">Time Left:30 sec</p>
+
+            <button onclick="getSubmit()">Submit</button>`;
+            // time=30;
+
+            timer=setInterval(function()
+            {
+                time--;
+                document.getElementById("timer").innerHTML="time left:" + time +"sec";
+
+                if(time <= 0)
+            {
+                clearInterval(timer);
+                otpExpired=true;
+                document.getElementById("timer").innerHTML="OTP Expired";
+            }
+            }, 1000);
+         }
+
+        function getSubmit()
+        {
+            if(otpExpired==true)
+        {
+            alert("OTP Expired");
+        }
+        else{
+            clearInterval(timer);
+            msg.innerHTML=("Login Successfully..!!");
+        }
+    }
+     </script>
+</body>
+</html>

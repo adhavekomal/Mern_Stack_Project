@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AmazonLite</h1>
+    <label for="">Enter product price</label>
+    <input type="number" name="" id="price">
+    <br><br>
+    <label for="">Enter product quantity</label>
+    <input type="number" name="" id="qn">
+    <br><br>
+    <button onclick="getBill()">Calculate Bill</button>
+    <br><br>
+    <button onclick="getdis1()">Apply 10% Discount</button>
+    <button onclick="getdis2()">Apply 20% Discount</button>
+    <button onclick="getdis3()">Apply 30% Discount</button>
+    <h2 id="result"></h2>
+    <script>
+        var a=document.getElementById("price");
+        var b=document.getElementById("qn");
+        var c=document.getElementById("result");
+        let disc;
+        let totalBill
+        function getBill()
+        {
+            totalBill=(price.value)*(qn.value);
+            result.innerHTML="Total Bill:"+totalBill;
+        }
+        function getdis1()
+        {
+            if(totalBill>1000)
+        {
+            disc=totalBill*0.10;
+            result.innerHTML="The total bill:"+totalBill+
+                            "<br> After applying 10 % discount"+disc+
+                            "<br> the final total bill"+(totalBill-disc);
+        }
+        else
+        {
+            alert("Added items worth"+(1000-totalBill)+"to apply 10%")
+        }
+        }
+ function getdis2()
+        {
+            if(totalBill>5000)
+        {
+            disc=totalBill*0.20;
+            result.innerHTML="The total bill:"+totalBill+
+                            "<br> After applying 20 % discount"+disc+
+                            "<br> the final total bill"+(totalBill-disc);
+        }
+        else
+        {
+            alert("Added items worth"+(5000-totalBill)+"to apply 20%")
+        }
+        }
+ function getdis3()
+        {
+            if(totalBill>8000)
+        {
+            disc=totalBill*0.30
+            result.innerHTML="The total bill:"+totalBill+
+                            "<br> After applying 30 % discount"+disc+
+                            "<br> the final total bill"+(totalBill-disc);
+        }
+        else
+        {
+            alert("Added items worth"+(8000-totalBill)+"to apply 30%")
+        }
+        }
+        
+    </script>
+</body>
+</html>
