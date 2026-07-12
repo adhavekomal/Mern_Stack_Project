@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Emoji</title>
+</head>
+<body>
+
+<style>
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:white;
+}
+
+.emoji{
+    width:220px;
+    height:220px;
+    background:linear-gradient(yellow ,orange);
+    border-radius:50%;
+    position:relative;
+    border: 1px solid black;
+}
+
+/* Left Eye */
+.eye{
+    width:45px;
+    height:45px;
+    background:white;
+    border:2px solid black;
+    border-radius:50%;
+    position:absolute;
+    overflow:hidden;
+    transition:1s;
+}
+
+.left{
+    top:50px;
+    left:45px;
+}
+
+.right{
+    top:50px;
+    right:45px;
+}
+
+/* Eye Hover */
+.eye:hover{
+    transform:scale(1.3);
+}
+
+/* Black Pupil */
+.pupil{
+    width:18px;
+    height:18px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:13px;
+    left:5px;
+    animation:eyeMove 1s infinite alternate;
+}
+
+/* Mouth */
+.mouth{
+    width:90px;
+    height:20px;
+    background:red;
+    border-radius:0 0 50px 50px;
+    position:absolute;
+    top:130px;
+    left:65px;
+    transition:0.3s;
+    overflow: hidden;
+    /* animation:mouthMove 1s infinite alternate; */
+}
+
+/* Mouth Hover */
+.mouth:hover{
+    /* transform:scale(1.2); */
+    animation: mouthOpen 0.5s infinite alternate;
+}
+
+/* Eye Movement */
+@keyframes eyeMove{
+    from{
+        left: 5px;
+    }
+    to{
+        left: 20px;
+    }
+}
+
+@keyframes mouthOpen{
+    from{
+        height: 20px;
+    }
+    to{
+        height: 45px;
+    }
+}
+
+/* Mouth Movement */
+/* @keyframes mouthMove{
+    from{
+        transform:translateY(0px);
+    }
+    to{
+        transform:translateY(5px);
+    }
+} */
+
+</style>
+
+</head>
+<body>
+
+<div class="emoji">
+
+    <div class="eye left">
+        <div class="pupil"></div>
+    </div>
+
+    <div class="eye right">
+        <div class="pupil"></div>
+    </div>
+
+    <div class="mouth"></div>
+
+</div>
+</body>
+</html>

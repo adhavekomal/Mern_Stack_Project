@@ -1,0 +1,100 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+        body
+{
+    background-color: black;
+}
+#box
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color: white;
+    background-position: center;
+    text-align:center;
+}
+#sign
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:20px;
+}
+button
+{
+    background-color:red;
+    color: white;
+    height: 70px;
+    width: 200px;
+    font-size: 30px;
+    
+}
+h4
+{
+    color: red;
+    font-size:50px;
+    margin:0;
+}
+h1
+{
+    color : white;
+    font-size:60px;
+    line-height:70px;
+}
+h3
+{
+    color :white;
+    font-size:30px;
+}
+.container
+{
+    height:100vh;
+    background-image: url(./net.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position :relative;
+}
+#i
+{
+   background-color: black;
+    color:white;
+    background: transparent;
+    height: 70px;
+    width: 500px;
+    font-size: 30px;
+}
+p
+{
+    color :whitesmoke;
+    font-size: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="sign">
+            <h4>NETFLIX</h4>
+            <button>Sign In</button>
+        </div>
+        <div id="box"> 
+            
+            <h1>Unlimited movies, <br>shows, and more</h1>
+            <h3>Starts at ₹149.Cancel at any time.</h3>
+            <h3>Ready to watch ? Enter your email to create or restart your membership.</h3>
+             <div id="form">
+                <input type="email" id="i" placeholder="Email address ">
+                <button>Get Started</button>
+             </div>
+        </div>
+        
+    </div>
+    
+</body>

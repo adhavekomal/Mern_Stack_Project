@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Komal Portfolio</title>
+  <link rel="shortcut icon" href="./profile.png" type="image/x-icon">
+ <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7ff;
+}
+
+
+
+nav{
+    width:100%;
+    background:linear-gradient(90deg,#4b6cb7,#6a11cb);
+    padding:18px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+
+nav ul li{
+    margin:0 20px;
+}
+
+nav ul li a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+
+#home{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    padding-top: 20px;
+}
+
+.home-content img{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    border:5px solid white;
+    margin-top:10px;
+}
+
+.home-content h1{
+    font-size:45px;
+    margin-top: 10px;
+}
+
+.home-content h3{
+    margin-top:10px;
+    font-size:25px;
+}
+
+.home-content p{
+    margin:20px;
+    font-size:18px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#6a11cb;
+    font-size:17px;
+    cursor:pointer;
+    transition:.4s;
+
+}
+
+button:hover{
+    background:#ffe600;
+    transform:scale(1.1);
+}
+
+
+section{
+    padding:70px 10%;
+}
+
+section h2{
+    text-align:center;
+    color:#6a11cb;
+    margin-bottom:30px;
+    font-size:35px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+    line-height:30px;
+}
+
+
+
+.edu-box{
+    display:flex;
+    justify-content:center;
+}
+
+.edu{
+    width:500px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.project-link{
+    color:blue;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.project-link:hover{
+    color: #6a11cb;
+    text-decoration: underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<ul>
+
+<li><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+
+<li><a href="#about"><i class="fa-solid fa-house"></i>About</a></li>
+
+<li><a href="#education"><i class="fa-solid fa-graduation-cap"></i>Education</a></li>
+
+<li><a href="#skills"><i class="fa-solid fa-code"></i>Skills</a></li>
+
+<li><a href="#projects"><i class="fa-solid fa-laptop-code"></i>Projects</a></li>
+
+<li><a href="#contact"><i class="fa-solid fa-phone"></i>Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section id="home">
+
+<div class="home-content">
+
+<img src="./photo.jpg" alt="Profile">
+
+<h1>Komal Adhave</h1>
+
+<h3>Student Portfolio</h3>
+
+<p>
+Hello! I am Komal Adhave.
+I am learning HTML, CSS and JavaScript.
+I enjoy designing attractive and responsive websites.
+</p>
+
+<button onclick="welcome()">
+Click Me
+</button>
+<h3 id="date"></h3>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<p>
+
+Hello! My name is <b>Komal Adhave</b>.
+I am a student and currently learning HTML,CSS,and Javascript.
+I enjoy creating creative websites and learning new technologies.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="edu-box">
+
+<div class="edu">
+
+<h3>College Name</h3>
+
+<p>YB PATIL POLYTECHNIC AKURDI PUNE</p>
+
+<p>Current Year :Third Year</p>
+
+<p>Course:Diploma in Computer Engineering </p>
+
+</div>
+
+</div>
+
+</section>
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="card">
+
+<ul>
+ <li>C</li>
+ 
+ <li>C++</li>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>JavaScript</li>
+
+
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="card">
+
+<h3>Flipkart Login Page</h3>
+
+<p>
+Designed a Flipkart Login page using HTML, CSS.
+</p>
+<a href="flipkart task 1.html" class="project-link">
+<i class="fa-solid fa-arrow-up-right-from-square"></i>View Project</a>
+
+<br><br>
+
+<h3>Netflix First Page</h3>
+
+<p>
+Created a Netflix first page using HTML and CSS.
+</p>
+<a href="netflix.html" class="project-link">
+<i class="fa-solid fa-arrow-up-right-from-square"></i>View Project</a>
+
+<br><br>
+
+<h3>Navigation Bar</h3>
+
+<p>
+Designed a responsive navigation bar using Flexbox.
+</p>
+<a href="navbar.html" class="project-link">
+<i class="fa-solid fa-arrow-up-right-from-square"></i>View Project</a>
+
+<br><br>
+
+<h3>Emoji Animation</h3>
+
+<p>
+Created emoji animation using CSS Transition and Transform.
+</p>
+<a href="animation task.html" class="project-link">
+<i class="fa-solid fa-arrow-up-right-from-square"></i>View Project</a>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="card">
+
+<p><b>Name :</b> Komal Adhave</p>
+
+<br>
+
+<p><b><i class="fa-solid fa-envelope"></i> Email:</b> adhavekomal@gmail.com</p>
+
+<br>
+
+<p><b><i class="fa-solid fa-phone"></i> Phone:</b> +91 9028890084</p>
+
+<br>
+
+<p><b><i class="fa-solid fa-location-dot"></i></b> Moshi Pune</p>
+
+<br>
+
+<button onclick="contactmsg()">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+<script>
+
+function welcome()
+{
+    alert("Welcome to Komal's Portfolio!");
+}
+
+function contactmsg()
+{
+    alert("Thank you for visiting my portfolio.");
+}
+
+
+</script>
+
+</body>
+</html>
