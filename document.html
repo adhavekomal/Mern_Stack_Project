@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 id="head">heading 1</h1>
+    <h1 class="a">heading 2//0</h1>
+    <h1>heading 3</h1>
+    <h1 class="a">heading 4//1</h1> -->
+
+    <!-- click event -->
+    <button onclick="getClick()">+</button>
+    <button onclick="">-</button>
+
+<!-- <script>
+       let ele= document.getElementsByTagName("h1")
+        ele[3].style.color="purple"
+        let ele=document.getElementsByClassName('a')
+        ele[0].style.color="red"
+
+       let ele= document.getElementById('head')
+       ele.innerHTML="hello from javascript"
+       ele.style.color="red"
+</script> -->
+<script>
+ <!-- //  click events -->
+       let count=0    
+        let ele= document.getElementById("h")
+       function getClick (){
+        ele.innerHTML=++count;
+       }
+</script>
+<h1 onclick="alert('button clicked')">click me</h1>
+ <h2 ondblclick="alert('double clicked')">db click</h2>
+</body>
+</html>

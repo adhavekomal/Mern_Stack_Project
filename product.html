@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 20px;
+            background:pink;
+        }
+
+        h1{
+            text-align: center;
+            color: black;
+        }
+
+        button{
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: blue;
+            color:white;
+            border:none;
+            border-radius: 8px;
+        }
+        #container{
+            display: flex;
+            justify-content: space-around;
+        }
+        #c{
+             width: 250px;
+             background: white;
+             padding: 15px;
+             border-radius: 15px;
+             text-align: center;
+        }
+        #c img{
+            width: 200px;
+            height: 180px;
+            border-radius: 10px;
+        }
+
+        #c h2{
+            color: navy;
+        }
+
+        #c h3{
+            color: dimgray;
+        }
+
+        #c h4{
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product List</h1>
+    <button onclick="getProduct()">Show products</button>
+    <div id="container"></div>
+
+    <script>
+        let card=document.getElementById("container");
+
+        let products=[
+        {
+            pname:"Watch",
+            cname:"Titan",
+            price:4000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSJQ3aFajcmLVuZj2ru76hgMktb7VAQc4BeW3m0kI4Mg&s=10"
+        },
+        {
+            pname:"Mobile",
+            cname:"Redmi",
+            price:80000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCKD-Gehf2IChgEZdVynvGzErJ2i-80rhoAK0X8Xp14A&s"
+        },
+        {
+            pname:"Laptop",
+            cname:"Acer",
+            price:63000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAu4wUD-gyCW6F_l5Dn2ZGgNf2tPk8gPCENobklHfWxQ&s=10"
+        },
+        {
+            pname:"Headphone",
+            cname:"Beribes",
+            price:5000,
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjEJz7CL9spaRcJCngo62pkcrh6GrW2pQEduQKWe2Hkg&s=10"
+        }
+    ];
+
+        function getProduct()
+        {
+            card.innerHTML="";
+            products.forEach((val)=>{
+                card.innerHTML+=`
+                          <div id="c">
+                               <img src="${val.img}" alt="">
+                                <h2>Product Name:${val.pname}</h2>
+                                <h3>Company Name:${val.cname}</h3>
+                                <h4>Price:${val.price}</h4>
+                          </div>
+                          `;
+            })
+        }
+
+        
+    </script>
+</body>
+</html>
